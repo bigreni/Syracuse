@@ -46,7 +46,7 @@ function processXmlDocumentPredictions(xml, text)
 		var predsTag = stopTag[0].getElementsByTagName("pre");
         var results = '<p><strong>' + text +'</strong></p><table id="tblResults" cellpadding="0" cellspacing="0">'
 
-		if(predsTag == "")
+		if(predsTag.length > 0)
 		{
 		    results = results.concat('<tr class="header"><th>ROUTE</th><th>DESTINATION</th><th>ARRIVAL</th></tr><tr><td class="spacer" colspan="3"></td></tr>');
 			for(var i=0; i<predsTag.length;i++)

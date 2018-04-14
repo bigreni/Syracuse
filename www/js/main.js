@@ -59,10 +59,10 @@
     {
         $(".dropList").select2();
         $('#simplemenu').sidr();
+        initApp();
         window.ga.startTrackerWithId('UA-88579601-15', 1, function(msg) {
             window.ga.trackView('Centro Home');
         });  
-        initApp();
         askRating();
         //document.getElementById('screen').style.display = 'none';     
     }
@@ -85,8 +85,8 @@ AppRate.promptForRating(false);
 
 function loadFaves()
 {
-    window.ga.trackView('Centro Favorites');
     window.location = "Favorites.html";
+    window.ga.trackView('Centro Favorites');
 }
 
 function getDirections() {
@@ -162,7 +162,7 @@ function processXmlDocumentPredictions(xml)
         var results = '<table id="tblResults" cellpadding="0" cellspacing="0">'
         document.getElementById('btnSave').style.visibility = "visible";
 
-		if(predsTag == "")
+		if(predsTag.length > 0)
 		{
 		    results = results.concat('<tr class="header"><th>ROUTE</th><th>DESTINATION</th><th>ARRIVAL</th></tr><tr><td class="spacer" colspan="3"></td></tr>');
 			for(var i=0; i<predsTag.length;i++)
