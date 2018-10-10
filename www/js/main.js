@@ -2,7 +2,7 @@
         if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
             document.addEventListener('deviceready', checkFirstUse, false);
         } else {
-            checkFirstUse();
+            notFirstUse();
         }
     }
     var admobid = {};
@@ -64,7 +64,14 @@
             window.ga.trackView('Centro Home');
         });  
         askRating();
-        //document.getElementById('screen').style.display = 'none';     
+        document.getElementById('screen').style.display = 'none';     
+    }
+
+   function notFirstUse()
+    {
+        $(".dropList").select2();
+        $('#simplemenu').sidr();
+        document.getElementById('screen').style.display = 'none';     
     }
 
 function askRating()
