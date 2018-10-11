@@ -98,8 +98,10 @@ function loadFaves()
 
 function getDirections() {
     reset();
-    var url = "https://bus-time.centro.org/bustime/map/getDirectionsStopsForRoute.jsp?route=" + $("#MainMobileContent_routeList").val();
-	$.get(url, function(data) {processXmlDocumentDirections(data); });    $("span").remove();
+    alert('1');
+    var url = encodeURI("https://bus-time.centro.org/bustime/map/getDirectionsStopsForRoute.jsp?route=" + $("#MainMobileContent_routeList").val());
+	$.get(url, function(data) {alert(data); processXmlDocumentDirections(data); });    alert('2');
+    //$("span").remove();
     $(".dropList").select2();
 }
 
@@ -107,11 +109,15 @@ function processXmlDocumentDirections(xml)
 {
     var list = $("#MainMobileContent_directionList");
     $(list).empty();
+    alert('3');
     $(list).append($("<option disabled/>").val("0").text("- Select Direction -"));
+    alert('4');
 	var routeTag = xml.getElementsByTagName("route");
+    alert('5');
 	var directionsTag = routeTag[0].getElementsByTagName("directions");	
+    alert('6');
 	var directionTag = directionsTag[0].getElementsByTagName("direction");
-
+	alert(directionTag.length);
 	for (var i=0; i<directionTag.length;i++)
 	{
 		var nameTag = directionTag[i].getElementsByTagName("name");
