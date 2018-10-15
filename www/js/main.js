@@ -100,9 +100,9 @@ function getDirections() {
     reset();
     alert('1');
     var url = encodeURI("https://bus-time.centro.org/bustime/map/getDirectionsStopsForRoute.jsp?route=" + $("#MainMobileContent_routeList").val());
-	$.get(url, function(data) {alert(data); processXmlDocumentDirections(data); });    alert('2');
-    //$("span").remove();
+    alert(url);    $.get(url, function(data) {processXmlDocumentDirections(data); });    $("span").remove();
     $(".dropList").select2();
+
 }
 
 function processXmlDocumentDirections(xml)
