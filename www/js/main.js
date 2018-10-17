@@ -64,7 +64,7 @@
             window.ga.trackView('Centro Home');
         });  
         askRating();
-        document.getElementById('screen').style.display = 'none';     
+        //document.getElementById('screen').style.display = 'none';     
     }
 
    function notFirstUse()
@@ -83,7 +83,7 @@ function askRating()
   promptAgainForEachNewVersion: true,
   storeAppURL: {
                 ios: '1225698349',
-                android: 'market://details?id=com.syracuse.free'
+                android: 'market://details?id=com.centro.free'
                }
 };
  
@@ -98,26 +98,19 @@ function loadFaves()
 
 function getDirections() {
     reset();
-    alert('1');
-    var url = encodeURI("https://bus-time.centro.org/bustime/map/getDirectionsStopsForRoute.jsp?route=" + $("#MainMobileContent_routeList").val());
-    alert(url);    $.get(url, function(data) {processXmlDocumentDirections(data); });    $("span").remove();
+    var url = encodeURI("http://bus-time.centro.org/bustime/map/getDirectionsStopsForRoute.jsp?route=" + $("#MainMobileContent_routeList").val());
+	$.get(url, function(data) {processXmlDocumentDirections(data); });    $("span").remove();
     $(".dropList").select2();
-
 }
 
 function processXmlDocumentDirections(xml)
 {
     var list = $("#MainMobileContent_directionList");
     $(list).empty();
-    alert('3');
     $(list).append($("<option disabled/>").val("0").text("- Select Direction -"));
-    alert('4');
 	var routeTag = xml.getElementsByTagName("route");
-    alert('5');
 	var directionsTag = routeTag[0].getElementsByTagName("directions");	
-    alert('6');
 	var directionTag = directionsTag[0].getElementsByTagName("direction");
-	alert(directionTag.length);
 	for (var i=0; i<directionTag.length;i++)
 	{
 		var nameTag = directionTag[i].getElementsByTagName("name");
@@ -132,7 +125,7 @@ function processXmlDocumentDirections(xml)
 function getStops()
 {
     reset();
-    var url = "https://bus-time.centro.org/bustime/map/getStopsForRouteDirection.jsp?route=" + $("#MainMobileContent_routeList").val() + "&direction=" + $("#MainMobileContent_directionList").val();
+    var url = "http://bus-time.centro.org/bustime/map/getStopsForRouteDirection.jsp?route=" + $("#MainMobileContent_routeList").val() + "&direction=" + $("#MainMobileContent_directionList").val();
 	$.get(url, function(data) {  processXmlDocumentStops(data); });
     $("span").remove();
     $(".dropList").select2();
@@ -161,7 +154,7 @@ function processXmlDocumentStops(xml)
 
 function getArrivalTimes() {
     reset();
-    var url = "https://bus-time.centro.org/bustime/eta/getStopPredictionsETA.jsp?agency=All&route=" + $("#MainMobileContent_routeList").val() + "&stop=" + $("#MainMobileContent_stopList").val();
+    var url = "http://bus-time.centro.org/bustime/eta/getStopPredictionsETA.jsp?agency=All&route=" + $("#MainMobileContent_routeList").val() + "&stop=" + $("#MainMobileContent_stopList").val();
 	$.get(url, function(data) {  processXmlDocumentPredictions(data); });       
     $("span").remove();
     $(".dropList").select2();
