@@ -5,41 +5,42 @@
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
 <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-<!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
-<link rel="stylesheet" type="text/css" href="http://bigreni.com/css/syracuse/index.css" />
+<script type="text/javascript">
+    var cachebuster = Math.round(new Date().getTime() / 1000);
+    //document.write('<link rel="stylesheet" type="text/css" href="css/index.css?cb=' +cachebuster+'"></li' + 'nk>');
+    document.write('<link rel="stylesheet" type="text/css" href="https://s3.us-east-2.amazonaws.com/bigreni.com/css/syracuse/index.css?cb=' +cachebuster+'"></li' + 'nk>');
+</script>
 <!-- Include the jQuery library -->
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 <link href="css/select2.min.css" rel="stylesheet" />
 <script src="js/select2.min.js"></script>
-<link rel="stylesheet" href="css/jquery.sidr.dark.min.css">
-<script src="js/jquery.sidr.min.js"></script>
 <title>Centro Arrivals</title>
-    <style>
-            /* Hide all the app pages until jQuery Mobile inits to
-               avoid the Flash of Unstyled Content */
-            .splashscreen {
-                width: 100%;
-                height: 100%;
-                border: 0;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                z-index:1001;
-                background: lightgrey;
-                text-shadow: none;
-                color: black;
-            }
-        </style>
+<style>
+    /* Hide all the app pages until jQuery Mobile inits to
+       avoid the Flash of Unstyled Content */
+    .splashscreen {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index:1001;
+        background: url(https://s3.us-east-2.amazonaws.com/bigreni.com/img/status.gif) no-repeat center center;
+        text-shadow: none;
+        color: black;
+    }
+</style>
 </head>
 <body>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript">
-        var cachebuster = Math.round(new Date().getTime() / 1000);
-        document.write('<script type="text/javascript" src="http://bigreni.com/js/syracuse/main.js?cb=' +cachebuster+'"></scr' + 'ipt>');
-        //document.write('<script type="text/javascript" src="js/main.js?cb=' +cachebuster+'"></scr' + 'ipt>');
-    </script>	
+        // document.write('<script type="text/javascript" src="https://s3.us-east-2.amazonaws.com/bigreni.com/js/syracuse/main.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+        document.write('<script type="text/javascript" src="https://s3.us-east-2.amazonaws.com/bigreni.com/js/syracuse/main_alt.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+    //    document.write('<script type="text/javascript" src="js/main.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+   </script>	
 	<script type="text/javascript" src="js/jsrender.min.js"></script>
 	<script type="text/javascript" src="js/jquery.cookie.js"></script>
     <div id="screen" class="splashscreen" style="display: none"></div>
@@ -50,18 +51,12 @@
                 onLoad();
                 //document.getElementById("screen").style.display = 'none';
             };
-            document.getElementById("screen").innerHTML = 'Loading...';
+           // document.getElementById("screen").innerHTML = 'Loading...';
             document.getElementById("screen").style.display = 'block';
         </script> 
     <div id="fullpage" data-role="page">
 		<div id="contentBox" class="box">
                  <h3>Centro Arrival Times</h3>
-            <!--<div id="sidr">
-              <ul>
-                <li><a href="index.html" >Arrivals</a></li>
-                <li><a href="javascript:loadFaves();" >Favorites</a></li>
-              </ul>
-            </div>-->
 			<table class="routeBox" style="width: 100vw;">
 				<tr>
 					<td colspan="2">Route:</td>
@@ -70,29 +65,23 @@
     	        <td>
                     <div>
                         <select id="MainMobileContent_routeList" class="dropList" style="width:90vw;" onchange="getDirections();">
-                            <option value="---">Select a Route</option>
                             <option value="AUB1">Aub1 - West Genesee</option>
                             <option value="AUB2">Aub2 - Franklin</option>
                             <option value="AUB3">Aub3 - North Street</option>
-                            <option value="AUB36">Aub36 - Auburn - Syracuse via Skaneatele</option>
-                            <option value="AUB38">Aub38 - Auburn - Syracuse via Elbridge</option>
+                            <option value="AUB38">Aub38 - Auburn - Syracuse</option>
                             <option value="AUB4">Aub4 - State Street</option>
-                            <option value="AUB50">Aub50 - Destiny USA</option>
                             <option value="AUB6">Aub6 - Wegmans Shoppers</option>
-                            <option value="AUB7">Aub7 - Welch Allen - Tessy</option>
-                            <option value="AUB8">Aub8 - Moravia - CCF</option>
-                            <option value="FUL4">Ful4 - Fulton East Side</option>
-                            <option value="FUL5">Ful5 - Fulton West Side</option>
+                            <option value="FUL4">Ful4 - Fulton - East</option>
+                            <option value="FUL5">Ful5 - Fulton - West</option>
                             <option value="MEX3">Mex3 - Mexico - Fulton</option>
                             <option value="OSW09">Osw09 - Price Chopper Shopper</option>
                             <option value="OSW10">Osw10 - SUNY Oswego Blue Route</option>
                             <option value="OSW11">Osw11 - SUNY Oswego Green Route</option>
-                            <option value="OSW1A">Osw1A - Price Chopper via 104</option>
-                            <option value="OSW1B">Osw1B - Price Chopper - Hamilton Homes</option>
-                            <option value="OSW1C">Osw1C - Price Chopper via Seneca Street</option>
-                            <option value="OSW1D">Osw1D - Price Chopper via Brandonwood</option>
+                            <option value="OSW1A">Osw1A - Walmart via 104</option>
+                            <option value="OSW1B">Osw1B - Walmart - Hamilton Homes</option>
+                            <option value="OSW1C">Osw1C - Walmart via Seneca Street</option>
+                            <option value="OSW1D">Osw1D - Walmart via Brandonwood</option>
                             <option value="OSW2A">Osw2A - College via 104</option>
-                            <option value="OSW2B">Osw2B - College via West Seneca</option>
                             <option value="OSW2C">Osw2C - College via West Utica</option>
                             <option value="OSW2D">Osw2D - College via Ellen St</option>
                             <option value="OSW46">Osw46 - Oswego - Syracuse</option>
@@ -102,56 +91,62 @@
                             <option value="ROME6">Rome6 - Griffiss</option>
                             <option value="ROME7">Rome7 - Bloomfield</option>
                             <option value="ROME9">Rome9 - Rome Hospital</option>
+                            <option value="SU243">SU243 - East Campus</option>
                             <option value="SU244">SU244 - Slocum Heights</option>
-                            <option value="SU245">SU245 - Nob Hill</option>
+                            <option value="SU343">SU343 - Genesee St - Westcott St</option>
                             <option value="SU344">SU344 - South Campus</option>
+                            <option value="SU345">SU345 - Thurber St</option>
                             <option value="SU43">SU43 - Waverly Ave</option>
-                            <option value="SU44">SU44 - Manley</option>
+                            <option value="SU44">SU44 - Skytop Rd</option>
                             <option value="SU443">SU443 - Connective Corridor</option>
                             <option value="SU444">SU444 - Small Road</option>
-                            <option value="SU45">SU45 - SU - Destiny USA</option>
                             <option value="SYRCC">SYRCC - Common Center Trips</option>
-                            <option value="SY10">Sy10 - South Salina - Nedrow</option>
-                            <option value="SY16">Sy16 - North Salina - Buckley Rd</option>
-                            <option value="SY20">Sy20 - James Street</option>
-                            <option value="SY26">Sy26 - Valley Drive</option>
+                            <option value="SY10">Sy10 - South Salina St - Nedrow</option>
+                            <option value="SY16">Sy16 - North Salina St - Buckley Rd</option>
+                            <option value="SY20">Sy20 - James St</option>
+                            <option value="SY26">Sy26 - South Ave</option>
                             <option value="SY30">Sy30 - Westcott - SU</option>
                             <option value="SY323">Sy323 - James Street - Minoa</option>
                             <option value="SY36">Sy36 - Camillus</option>
                             <option value="SY40">Sy40 - Drumlins - Nob Hill</option>
                             <option value="SY46">Sy46 - Liverpool - Route 57</option>
-                            <option value="SY48">Sy48 - Liverpool - Morgan</option>
+                            <option value="SY48">Sy48 - Liverpool - Morgan Rd</option>
                             <option value="SY50">Sy50 - Destiny USA</option>
                             <option value="SY510">Sy510 - Lafayette - Tully</option>
-                            <option value="SY52">Sy52 - Court Street</option>
-                            <option value="SY54">Sy54 - Midland - Valley Drive</option>
-                            <option value="SY58">Sy58 - Parkhill</option>
+                            <option value="SY52">Sy52 - Court St</option>
+                            <option value="SY54">Sy54 - Midland Ave - Valley Dr</option>
+                            <option value="SY58">Sy58 - Park Hill</option>
+                            <option value="SY582">Sy582 - Orange Lot</option>
                             <option value="SY62">Sy62 - Manlius</option>
-                            <option value="SY64">Sy64 - Western Lights &amp; Grand Avenue</option>
+                            <option value="SY64">Sy64 - Western Lights</option>
                             <option value="SY68">Sy68 - East Fayette - Erie Blvd</option>
-                            <option value="SY72">Sy72 - Townsend - East Colvin</option>
+                            <option value="SY72">Sy72 - Townsend St - East Colvin St</option>
                             <option value="SY74">Sy74 - Solvay</option>
-                            <option value="SY76">Sy76 - Salt Springs</option>
+                            <option value="SY76">Sy76 - Salt Springs Rd</option>
+                            <option value="SY782">Sy782 - Willis Ave Lot</option>
                             <option value="SY80">Sy80 - Grant Blvd</option>
                             <option value="SY82">Sy82 - Baldwinsville</option>
                             <option value="SY84">Sy84 - Mattydale</option>
-                            <option value="SY86">Sy86 - Henry Clay</option>
+                            <option value="SY86">Sy86 - Henry Clay Blvd</option>
+                            <option value="SY874">Sy874 - Solvay</option>
                             <option value="SY88">Sy88 - North Syracuse - Central Square</option>
                             <option value="SY90">Sy90 - Wegmans Shopper</option>
+                            <option value="SY901">Sy901 - State Fair - Hub</option>
+                            <option value="SY907">Sy907 - Long Branch Park</option>
+                            <option value="SY909">Sy909 - Destiny USA</option>
                             <option value="SY92">Sy92 - Tops Shoppers</option>
-                            <option value="SY921">Sy921 - Henninger  </option>
-                            <option value="SY926">Sy926 - Corcoran  </option>
-                            <option value="SY931">Sy931 - Nottingham </option>
-                            <option value="SY936">Sy936 - Syracuse Academy of Science  </option>
-                            <option value="SY94">Sy94 - J-Lot Shuttle</option>
-                            <option value="SY942">Sy942 - Christian Brothers Academy</option>
+                            <option value="SY921">Sy921 - Teall Ave</option>
+                            <option value="SY926">Sy926 - Glenwood</option>
+                            <option value="SY931">Sy931 - East Genesee</option>
+                            <option value="SY936">Sy936 - Erie Blvd West</option>
+                            <option value="SY942">Sy942 - Randall Road</option>
                             <option value="SY958">Sy958 - Bishop Grimes  </option>
-                            <option value="SY966">Sy966 - Bishop Ludden </option>
-                            <option value="SY972">Sy972 - Institute of Technology at Centr</option>
-                            <option value="SY974">Sy974 - PSLA</option>
+                            <option value="SY966">Sy966 - Fay Road</option>
+                            <option value="SY972">Sy972 - Townsend</option>
+                            <option value="SY974">Sy974 - Wilbur Ave</option>
                             <option value="UT11">Ut11 - Utica - Whitesboro</option>
                             <option value="UT111">Ut111 - Utica - New York Mills</option>
-                            <option value="UT12">Ut12 - Utica - Bleeker St.</option>
+                            <option value="UT12">Ut12 - Utica - Bleecker St.</option>
                             <option value="UT14">Ut14 - Mohawk</option>
                             <option value="UT15">Ut15 - James Street</option>
                             <option value="UT20">Ut20 - Lenox - Business Park</option>
