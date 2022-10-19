@@ -34,7 +34,7 @@ function removeFavorite(index)
 }
 
 function loadArrivals(route, stop, text) {
-    var url = "http://bus-time.centro.org/bustime/eta/getStopPredictionsETA.jsp?agency=All&route=" + route + "&stop=" + stop;
+    var url = encodeURI("http://bus-time.centro.org/bustime/eta/getStopPredictionsETA.jsp?agency=All&route=" + route + "&stop=" + stop);
 	$.get(url, function(data) {  processXmlDocumentPredictions(data, text); });       
 }
 
