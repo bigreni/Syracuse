@@ -169,8 +169,9 @@ function processXmlDocumentDirections(xml)
 function getStops()
 {
     reset();
-    var url = "http://bus-time.centro.org/bustime/map/getStopsForRouteDirection.jsp?route=" + $("#MainMobileContent_routeList").val() + "&direction=" + $("#MainMobileContent_directionList").val();
+    var url = encodeURI("http://bus-time.centro.org/bustime/map/getStopsForRouteDirection.jsp?route=" + $("#MainMobileContent_routeList").val() + "&direction=" + $("#MainMobileContent_directionList").val());
 	$.get(url, function(data) {  processXmlDocumentStops(data); });
+
     $("span").remove();
     $(".dropList").select2();
 }
@@ -199,7 +200,7 @@ function processXmlDocumentStops(xml)
 function getArrivalTimes() {
     showAd();
     reset();
-    var url = "http://bus-time.centro.org/bustime/eta/getStopPredictionsETA.jsp?agency=All&route=" + $("#MainMobileContent_routeList").val() + "&stop=" + $("#MainMobileContent_stopList").val();
+    var url = encodeURI("http://bus-time.centro.org/bustime/eta/getStopPredictionsETA.jsp?agency=All&route=" + $("#MainMobileContent_routeList").val() + "&stop=" + $("#MainMobileContent_stopList").val());
 	$.get(url, function(data) {  processXmlDocumentPredictions(data); });       
     $("span").remove();
     $(".dropList").select2();
