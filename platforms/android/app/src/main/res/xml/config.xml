@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.centro.free" version="2.0" versionCode="3" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.centro.free" version="3.0" versionCode="300" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="AdMob">
+        <param name="android-package" value="admob.plus.cordova.AdMob" />
+    </feature>
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
@@ -82,7 +85,4 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
     <preference name="InterceptRemoteRequests" value="all" />
-    <feature name="AdMob">
-        <param name="android-package" value="admob.plus.cordova.AdMob" />
-    </feature>
 </widget>
