@@ -7,16 +7,8 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-admobsdk": {
-      "PACKAGE_NAME": "com.centro.free"
-    },
-    "cordova-plugin-admobpro": {
-      "ADMOB_ANDROID_APP_ID": "ca-app-pub-1855415514372943~9063671314",
-      "PLAY_SERVICES_VERSION": "20.4.0",
-      "PACKAGE_NAME": "com.centro.free"
-    },
     "cordova-plugin-apprate": {
-      "PLAY_CORE_VERSION": "1.+",
+      "PLAY_REVIEW_VERSION": "2.+",
       "PACKAGE_NAME": "com.centro.free"
     },
     "cordova-plugin-device": {
@@ -38,9 +30,6 @@
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.centro.free"
-    },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.centro.free"
     },
