@@ -27,6 +27,11 @@
     },
     "cordova-plugin-wkwebview-file-xhr": {
       "PACKAGE_NAME": "com.centro.free"
+    },
+    "admob-plus-cordova": {
+      "APP_ID_ANDROID": "ca-app-pub-9249695405712287~1981721654",
+      "PLAY_SERVICES_VERSION": "23.0.0",
+      "PACKAGE_NAME": "com.centro.free"
     }
   },
   "dependent_plugins": {

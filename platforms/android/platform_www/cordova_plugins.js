@@ -92,6 +92,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.InAppBrowser.open"
       ]
+    },
+    {
+      "id": "admob-plus-cordova.AdMob",
+      "file": "plugins/admob-plus-cordova/www/admob.js",
+      "pluginId": "admob-plus-cordova",
+      "clobbers": [
+        "admob"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -103,6 +111,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-support-android-plugin": "2.0.4",
     "cordova-plugin-idfa": "3.0.0",
     "cordova-plugin-inappbrowser": "6.0.0",
-    "cordova-plugin-wkwebview-file-xhr": "3.1.1"
+    "cordova-plugin-wkwebview-file-xhr": "3.1.1",
+    "admob-plus-cordova": "2.0.0-alpha.18"
   };
 });
