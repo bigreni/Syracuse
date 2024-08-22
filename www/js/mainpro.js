@@ -44,9 +44,6 @@ function registerAdEvents() {
     });
 }
 
-function createSelectedBanner() {
-      AdMob.createBanner({adId:admobid.banner});
-}
 
 function checkFirstUse()
 {
@@ -84,21 +81,22 @@ function checkPermissions(){
 
 function askRating()
 {
-cordova.plugins.AppRate.setPreferences = {
-    reviewType: {
-        ios: 'AppStoreReview',
-        android: 'InAppBrowser'
-        },
-useLanguage:  'en',
-usesUntilPrompt: 10,
-promptAgainForEachNewVersion: true,
-storeAppURL: {
-            ios: '1225698349',
-            android: 'market://details?id=com.centro.free'
-           }
-};
-
-AppRate.promptForRating(false);
+    const appRatePlugin = AppRate;
+    appRatePlugin.setPreferences({
+        reviewType: {
+            ios: 'AppStoreReview',
+            android: 'InAppBrowser'
+            },
+    useLanguage:  'en',
+    usesUntilPrompt: 10,
+    promptAgainForEachNewVersion: true,
+    storeAppURL: {
+                ios: '1225698349',
+                android: 'market://details?id=com.centro.free'
+               }
+    });
+    
+    AppRate.promptForRating(false);   
 }
 
 function loadFaves()
@@ -109,14 +107,11 @@ window.location = "Favorites.html";
 
 function showAd()
 {
-document.getElementById("screen").style.display = 'block';     
 if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
-    AdMob.isInterstitialReady(function(isready){
-        if(isready) 
-            AdMob.showInterstitial();
-    });
-}
-document.getElementById("screen").style.display = 'none'; 
+    document.getElementById("screen").style.display = 'block';     
+    interstitial.show();
+    document.getElementById("screen").style.display = 'none'; 
+    }
 }
 
 function getDirections() {
