@@ -30,6 +30,9 @@
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "com.centro.free"
     },
+    "cordova-plugin-purchase": {
+      "PACKAGE_NAME": "com.centro.free"
+    },
     "cordova-plugin-wkwebview-file-xhr": {
       "PACKAGE_NAME": "com.centro.free"
     }

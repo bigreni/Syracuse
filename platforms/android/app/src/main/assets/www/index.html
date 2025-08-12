@@ -72,6 +72,13 @@
                             <option value="AUB38">Aub38 - Auburn - Syracuse</option>
                             <option value="AUB4">Aub4 - State Street</option>
                             <option value="AUB6">Aub6 - Wegmans Shoppers</option>
+                            <option value="COR1">Cor1 - Route 1</option>
+                            <option value="COR11">Cor11 - Route 11</option>
+                            <option value="COR2">Cor2 - Route 2</option>
+                            <option value="COR3">Cor3 - Route 3</option>
+                            <option value="COR4">Cor4 - Route 4</option>
+                            <option value="COR5">Cor5 - Route 5</option>
+                            <option value="COR6">Cor6 - Route 6</option>
                             <option value="FUL4">Ful4 - Fulton - East</option>
                             <option value="FUL5">Ful5 - Fulton - West</option>
                             <option value="MEX3">Mex3 - Mexico - Fulton</option>
@@ -87,11 +94,8 @@
                             <option value="OSW2D">Osw2D - College via Ellen St</option>
                             <option value="OSW46">Osw46 - Oswego - Syracuse</option>
                             <option value="ROME2">Rome2 - WalMart</option>
-                            <option value="ROME4">Rome4 - Turin St</option>
-                            <option value="ROME5">Rome5 - Price Chopper</option>
-                            <option value="ROME6">Rome6 - Griffiss</option>
-                            <option value="ROME7">Rome7 - Bloomfield</option>
-                            <option value="ROME9">Rome9 - Rome Hospital</option>
+                            <option value="ROME5">Rome5 - Black River Blvd</option>
+                            <option value="ROME6">Rome6 - MVCC - Griffiss</option>
                             <option value="SU243">SU243 - East Campus</option>
                             <option value="SU244">SU244 - Slocum Heights</option>
                             <option value="SU343">SU343 - Genesee St - Westcott St</option>
@@ -107,7 +111,6 @@
                             <option value="SY20">Sy20 - James St</option>
                             <option value="SY26">Sy26 - South Ave</option>
                             <option value="SY30">Sy30 - Westcott - SU</option>
-                            <option value="SY323">Sy323 - James Street - Minoa</option>
                             <option value="SY36">Sy36 - Camillus</option>
                             <option value="SY40">Sy40 - Drumlins - Nob Hill</option>
                             <option value="SY46">Sy46 - Liverpool - Route 57</option>
@@ -129,22 +132,12 @@
                             <option value="SY82">Sy82 - Baldwinsville</option>
                             <option value="SY84">Sy84 - Mattydale</option>
                             <option value="SY86">Sy86 - Henry Clay Blvd</option>
-                            <option value="SY874">Sy874 - Solvay</option>
                             <option value="SY88">Sy88 - North Syracuse - Central Square</option>
                             <option value="SY90">Sy90 - Wegmans Shopper</option>
                             <option value="SY901">Sy901 - State Fair - Hub</option>
                             <option value="SY907">Sy907 - Long Branch Park</option>
                             <option value="SY909">Sy909 - Destiny USA</option>
                             <option value="SY92">Sy92 - Tops Shoppers</option>
-                            <option value="SY921">Sy921 - Teall Ave</option>
-                            <option value="SY926">Sy926 - Glenwood</option>
-                            <option value="SY931">Sy931 - East Genesee</option>
-                            <option value="SY936">Sy936 - Erie Blvd West</option>
-                            <option value="SY942">Sy942 - Randall Road</option>
-                            <option value="SY958">Sy958 - Bishop Grimes  </option>
-                            <option value="SY966">Sy966 - Fay Road</option>
-                            <option value="SY972">Sy972 - Townsend</option>
-                            <option value="SY974">Sy974 - Wilbur Ave</option>
                             <option value="UT11">Ut11 - Utica - Whitesboro</option>
                             <option value="UT111">Ut111 - Utica - New York Mills</option>
                             <option value="UT12">Ut12 - Utica - Bleecker St.</option>
@@ -157,7 +150,7 @@
                             <option value="UT29">Ut29 - Riverside Drive</option>
                             <option value="UT30">Ut30 - Clinton</option>
                             <option value="UT31">Ut31 - Oneida - Chadwicks</option>
-                            <option value="X999">X999 - Test</option>
+                            <option value="UT33">Ut33 - Rome - Turning Stone</option>
                         </select>
                     </div>
                 </td>
@@ -183,6 +176,9 @@
 					<td><div class="wait"><img id="stopWait" class="hidden wait" src="img/circle.gif" alt="Please wait"/></div></td>
 				</tr>
 			</table>
+                <div id="divSubscribe" style="display: none;">
+                    <h4 style="text-align:center;"><button id="btnSubscribe" onclick="proSubscription();" class="premium">Remove Ads</button></h4>
+                </div>
                 <h2 style="text-align:center;">
                     <button onclick="saveFavorites();" id="btnSave" style="border:none; background-color: lightgreen; color:black;visibility: hidden;">&#x2764; Add to favorites</button>
                 </h2>

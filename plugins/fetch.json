@@ -91,5 +91,13 @@
       "APP_ID_ANDROID": "ca-app-pub-9249695405712287~1981721654",
       "APP_ID_IOS": "ca-app-pub-9249695405712287~7042476649"
     }
+  },
+  "cordova-plugin-purchase": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-purchase"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

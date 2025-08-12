@@ -132,4 +132,8 @@
     <preference name="InterceptRemoteRequests" value="all" />
     <preference name="SwiftVersion" value="5.3" />
     <preference name="deployment-target" value="12.0" />
+    <feature name="InAppPurchase">
+        <param name="ios-package" value="InAppPurchase" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

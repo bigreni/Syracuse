@@ -100,6 +100,15 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.InAppBrowser.open"
       ]
+    },
+    {
+      "id": "cordova-plugin-purchase.CdvPurchase",
+      "file": "plugins/cordova-plugin-purchase/www/store.js",
+      "pluginId": "cordova-plugin-purchase",
+      "clobbers": [
+        "store",
+        "CdvPurchase"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -112,6 +121,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-support-android-plugin": "2.0.4",
     "cordova-plugin-idfa": "3.0.0",
     "cordova-plugin-inappbrowser": "6.0.0",
+    "cordova-plugin-purchase": "13.12.1",
     "cordova-plugin-wkwebview-file-xhr": "3.1.1"
   };
 });

@@ -31,6 +31,9 @@
     },
     "cordova-plugin-wkwebview-file-xhr": {
       "PACKAGE_NAME": "com.centro.free"
+    },
+    "cordova-plugin-purchase": {
+      "PACKAGE_NAME": "com.centro.free"
     }
   },
   "dependent_plugins": {
